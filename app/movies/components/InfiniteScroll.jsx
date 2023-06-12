@@ -15,11 +15,11 @@ export function InfiniteScrollWrapper() {
     const res = await getAllMovies(page);
     setMovies([...movies, ...res.data]);
     setPage((prev) => prev + 1);
-  }, [movies, page]);
+  }, [movies,page]);
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   return (
     <>
@@ -27,7 +27,7 @@ export function InfiniteScrollWrapper() {
       <InfiniteScroll
         dataLength={movies.length} //This is important field to render the next data
         next={() => fetchData()}
-        hasMore={movies.length <= 60}
+        hasMore={movies.length <= 50}
         loader={
           <div className="flex justify-center">
             <InfinitySpin width="100" color="#fdba74" />
