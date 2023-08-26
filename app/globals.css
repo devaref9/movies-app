@@ -3,17 +3,36 @@
 @tailwind utilities;
 
 @layer components {
+  .custom-container {
+    @apply mx-[15px] lg:mx-[50px];
+  }
   .btn {
-    @apply rounded-md py-2 px-4 transition-all shadow-lg cursor-pointer;
+    @apply rounded-[5px] px-[10px] py-2 transition-all cursor-pointer font-medium text-sm min-w-[95px];
   }
   .btn-primary {
-    @apply bg-slate-300 hover:bg-orange-300 text-slate-800 hover:text-gray-200 shadow-gray-200 hover:shadow-orange-200;
+    @apply bg-primary text-black;
   }
-  .btn-primary--disabled {
-    @apply text-gray-500 hover:shadow-none hover:bg-slate-300 hover:text-gray-500;
+  .btn-secondary {
+    @apply bg-secondary text-white;
   }
-  .btn-primary--active {
-    @apply bg-orange-300 text-gray-200 shadow-orange-200;
+  .btn-link {
+    @apply bg-[#272727] hover:bg-primary-dark hover:bg-opacity-30 rounded-full text-lg text-gray-400 transition hover:text-primary;
+  }
+  .btn-link--active {
+    @apply text-primary bg-primary-dark bg-opacity-30;
+  }
+
+  .rounded-default {
+    @apply rounded-[5px];
+  }
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .half-space {
+    @apply [word-spacing:-4px];
+  }
+  .scrollbar--custom {
+    @apply scrollbar-thin scrollbar-thumb-primary scrollbar-track-black scrollbar-thumb-rounded-md scrollbar-track-rounded-md;
   }
 }
 
@@ -29,14 +48,4 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
-
-body {
-  /* color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
 }
