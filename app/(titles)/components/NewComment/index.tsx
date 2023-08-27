@@ -9,7 +9,7 @@ const postComment = async ({
   text: string;
   titleId: string;
 }) => {
-  const res = fetch("http://localhost:3000/api/titles/comments/:titleId", {
+  const res = fetch("https://movies-app-wheat-six.vercel.app/api/titles/comments/:titleId", {
     method: "POST",
     body: JSON.stringify({ text, titleId }),
     //@ts-ignore

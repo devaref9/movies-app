@@ -3,7 +3,7 @@ import axios from "axios";
 export default async function getTitleComments(titleId: string) {
   const options = {
     method: "GET",
-    url: `http://localhost:3000/api/titles/comments/${titleId}`,
+    url: `https://movies-app-wheat-six.vercel.app/api/titles/comments/${titleId}`,
   };
 
   try {
