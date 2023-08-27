@@ -4,6 +4,7 @@ type Title = {
 };
 
 let titles: Title[] = [];
+console.log("titles", titles);
 
 // handlers
 export const getTitles = () => titles;
