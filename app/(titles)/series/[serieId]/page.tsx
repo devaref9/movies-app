@@ -18,7 +18,6 @@ const TABS = {
 };
 
 export const dynamic = "force-dynamic";
-export  const revalidate = 0;
 
 export async function generateMetadata({ params: { serieId } }: pageProps) {
   const serie = await getTitleById(serieId);
