@@ -41,3 +41,17 @@ model Account {
 
   @@unique([provider, providerAccountId])
 }
+
+model Title {
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  titleId  String    @unique
+  commnets Comment[]
+}
+
+model Comment {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  text      String
+  createdAt DateTime @default(now())
+  title     Title    @relation(fields: [titleId], references: [titleId])
+  titleId   String
+}

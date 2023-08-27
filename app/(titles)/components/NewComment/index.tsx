@@ -9,13 +9,16 @@ const postComment = async ({
   text: string;
   titleId: string;
 }) => {
-  const res = fetch("https://movies-app-wheat-six.vercel.app/api/titles/comments/:titleId", {
-    method: "POST",
-    body: JSON.stringify({ text, titleId }),
-    //@ts-ignore
-    "Content-Type": "application/json",
-  });
-  return (await res);
+  const res = fetch(
+    "https://movies-app-wheat-six.vercel.app/api/titles/comments/:titleId",
+    {
+      method: "POST",
+      body: JSON.stringify({ text, titleId }),
+      //@ts-ignore
+      "Content-Type": "application/json",
+    }
+  );
+  return await res;
 };
 
 const NewComment = () => {

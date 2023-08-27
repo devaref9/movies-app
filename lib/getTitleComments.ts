@@ -8,8 +8,7 @@ export default async function getTitleComments(titleId: string) {
 
   try {
     const response = await axios.request(options);
-    const data = await response.data;
-    const comments = data.title.comments.sort(
+    const comments = await response.data.sort(
       (a: any, b: any) => Date.parse(b.createdAt) - Date.parse(a.createdAt)
     );
 
