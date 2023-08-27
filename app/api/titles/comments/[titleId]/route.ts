@@ -17,7 +17,8 @@ export const POST = async (req: Request, res: NextResponse) => {
     const { text, titleId } = await req.json();
     const comment: { text: string; id: string } = { text: text, id: uuidv4() };
     addComment(comment, titleId);
-    return NextResponse.json({ message: "OK", comment }, { status: 200 });
+    const comments = getTitleById(titleId)?.comments;
+    return NextResponse.json({ message: "OK", comments }, { status: 200 });
   } catch (err) {
     return NextResponse.json({ message: "Error", err }, { status: 500 });
   }
