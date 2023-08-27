@@ -12,12 +12,14 @@ const Comments = async ({ titleId }: { titleId: string }) => {
   return (
     <div className="flex flex-col gap-8">
       {session ? <NewComment /> : <AuthMessage />}
-      {comments && !(comments.length > 0) ? (
+      {!comments && <p>Loading...</p>}
+      {comments && !(comments.length > 0) && (
         <p className="font-bold text-center">
           تاکنون دیدگاهی ارسال نشده. اولین نفری باشید که نظر خودشو برای دیگران
           به اشتراک میزاره :)
         </p>
-      ) : (
+      )}
+      {comments && comments.length > 0 && (
         <div className="flex flex-col gap-3">
           {comments?.map((comment: any) => {
             return <SingleComment key={comment.id} comment={comment} />;
