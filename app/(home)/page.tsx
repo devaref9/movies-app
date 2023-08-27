@@ -2,23 +2,22 @@ import AboutSection from "@/app/(home)/components/AboutSection/AboutSection";
 import BannerSection from "@/app/(home)/components/BannerSection/BannerSection";
 import LatestMoviesSection from "@/app/(home)/components/LatestMoviesSection/LatestMoviesSection";
 import LatestSeriesSection from "@/app/(home)/components/LatestSeriesSection/LatestSeriesSection";
-import { Suspense } from "react";
+import { Suspense, SuspenseList } from "react";
 import { InfinitySpin } from "react-loader-spinner";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col gap-10">
-      <Suspense
-        fallback={
-          <div className="flex justify-center items-center h-screen">
-            <InfinitySpin width="200" color="#f5ad11" />
-          </div>
-        }
-      >
-        <BannerSection />
-        <LatestMoviesSection />
-        <LatestSeriesSection />
-      </Suspense>
+      <SuspenseList revealOrder="forwards">
+        <Suspense>
+          <BannerSection />
+        </Suspense>
+
+        <Suspense>
+          <LatestMoviesSection />
+          <LatestSeriesSection />
+        </Suspense>
+      </SuspenseList>
       <AboutSection />
     </main>
   );
