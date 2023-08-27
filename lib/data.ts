@@ -3,7 +3,18 @@ type Title = {
   comments?: { id: string; text: string; createdAt?: Date }[];
 };
 
-let titles: Title[] = [];
+let titles: Title[] = [
+  {
+    id: "tt16993822",
+    comments: [
+      {
+        text: "wow",
+        id: "c7a1e1a1-5be0-40f6-9e62-18e76545c063",
+        createdAt: new Date("2023-08-27T09:32:09.435Z"),
+      },
+    ],
+  },
+];
 
 // handlers
 export const getTitles = () => titles;
