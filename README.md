@@ -1,13 +1,18 @@
 # **Movies App** responsive website
 
+![Movies App Home Page Screenshot](/home-screenshot.png "Home Page Screenshot")
+
 **Live** **Demo** https://movies-app-wheat-six.vercel.app/
 
 ## :wrench: Technologies Used
 
 - Next
+- TypeScript
 - Tailwind
-- Context
-- App Router
+- Axios
+- Next-Auth
+- Prisma
+- Mongodb
 
 ## :rocket: Setup
 
