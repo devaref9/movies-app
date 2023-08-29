@@ -10,3 +10,21 @@
 .swiper-button-prev:hover {
   color: rgb(30 41 59);
 }
+
+.mySwiper1 {
+  @media only screen and (max-width: 768px) {
+    flex-basis: 0% !important;
+    display: none !important;
+  }
+}
+.mySwiper2 {
+  top: 60%;
+  transform: translateY(-50%);
+  height: 350px;
+  flex-basis: 60%;
+  @media only screen and (max-width: 768px) {
+    flex-basis: 100% !important;
+    top: 55%;
+    height: 78%;
+  }
+}

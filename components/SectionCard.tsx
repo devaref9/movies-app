@@ -5,7 +5,7 @@ import { TitleType } from "@/types";
 
 export default async function SectionCard({ item }: { item: TitleType }) {
   return (
-    <div className="relative h-[290px] min-w-[175px] sm:w-auto rounded-default overflow-hidden shadow-md group">
+    <div className="relative h-[290px] min-w-[170px] sm:w-auto rounded-default overflow-hidden shadow-md group">
       <div className="h-full relative w-full overflow-hidden">
         <Image
           style={{

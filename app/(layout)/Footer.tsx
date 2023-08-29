@@ -4,7 +4,7 @@ import SocialIcon from "@/components/SocialIcon";
 
 export default function Footer() {
   return (
-    <footer className="pt-6 pb-10 lg:pb-6 lg:pt-12 flex flex-col gap-4 items-center">
+    <footer className="custom-container pt-6 pb-[75px] lg:pb-6 lg:pt-12 flex flex-col gap-4 items-center">
       <ul className="flex gap-4 items-center">
         <li>
           <SocialIcon Icon={FaTelegramPlane} href={"https://t.me/filmkio"} />
@@ -32,7 +32,7 @@ export default function Footer() {
           <Link href={"/series"}>سریال ها</Link>
         </li>
       </ul>
-      <p className="font-medium text-sm text-gray-500">
+      <p className="font-medium text-[11px] lg:text-sm text-gray-500">
         تمامی حقوق مادی و معنوی این وبسایت متعلق به{" "}
         <span className="text-primary">فیلمکیو</span> می باشد .
       </p>

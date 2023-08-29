@@ -34,7 +34,7 @@ const ScrollToTop = () => {
   };
   return (
     <div
-      className={`p-2 lg:p-3 transition-all bg-primary text-black lg:hover:shadow-md lg:hover:shadow-primary-dark rounded-full fixed right-5 bottom-10 z-30 cursor-pointer  
+      className={`p-2 hidden lg:block lg:p-3 transition-all bg-primary text-black lg:hover:shadow-md lg:hover:shadow-primary-dark rounded-full fixed right-5 bottom-10 z-30 cursor-pointer  
         ${
           showTopBtn
             ? "bottom-16 lg:bottom-5 translate-y-0 opacity-100"

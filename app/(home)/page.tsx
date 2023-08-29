@@ -8,14 +8,14 @@ import { InfinitySpin } from "react-loader-spinner";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col gap-10">
-      <Suspense fallback={<p>Loading...</p>}>
+      {/* <Suspense fallback={<p>Loading...</p>}> */}
         <BannerSection />
-      </Suspense>
+      {/* </Suspense> */}
 
-      <Suspense fallback={<p>Loading...</p>}>
+      {/* <Suspense fallback={<p>Loading...</p>}> */}
         <LatestMoviesSection />
         <LatestSeriesSection />
-      </Suspense>
+      {/* </Suspense> */}
       <AboutSection />
     </main>
   );

@@ -4,7 +4,7 @@ import { useState } from "react";
 import FormInput from "../components/FormInput";
 import Link from "next/link";
 import { signIn, useSession } from "next-auth/react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
 import ButtonLoadingAnimation from "@/components/ButtonLoadingAnimation";
@@ -15,6 +15,7 @@ type User = {
 };
 
 const Login = () => {
+  const session = useSession();
   const router = useRouter();
   const [data, setData] = useState<User>({
     password: "",
@@ -25,16 +26,18 @@ const Login = () => {
   const handleLogin = async (e: any) => {
     e.preventDefault();
     setIsLoading(true);
-    await signIn("credentials", { ...data, redirect: false })
-      .then((callback) => {
+    await signIn("credentials", { ...data, redirect: false }).then(
+      (callback) => {
         setIsLoading(false);
         if (callback?.error) {
           toast.error(callback.error);
         } else if (callback?.ok && !callback?.error) {
-          router.push("/")
+          session.update();
+          router.push("/");
           toast.success("Logged in successfully!");
         }
-      })
+      }
+    );
   };
   return (
     <>

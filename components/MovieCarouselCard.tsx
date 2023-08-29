@@ -27,7 +27,6 @@ export default function MovieCarouselCard({ movie }: { movie: TitleType }) {
             fill
             sizes="(max-width:640px)30vw,(min-width:641px)20vw"
             loading="eager"
-            priority
           />
         </Link>
         <h3

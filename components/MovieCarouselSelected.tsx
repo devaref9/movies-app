@@ -11,6 +11,7 @@ const MovieCarouselSelected = ({ movie }: { movie: TitleType }) => {
         src={movie?.primaryImage.url}
         alt={movie?.titleText.text}
         fill
+        loading="eager"
         sizes="(min-width:768px)40vw"
       />
       <div className="absolute right-0 left-0 top-0 bottom-0 bg-gradient-to-r from-transparent to-black"></div>
